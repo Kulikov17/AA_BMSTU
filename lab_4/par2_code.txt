@@ -1,0 +1,37 @@
+template <typename T>
+Matrix<T> Matrix<T>::multByRow(const Matrix<T> &factor, size_t workers_amount) {
+    Matrix<T> output(rows_, factor.cols());
+    std::queue<size_t> indexes;
+    std::vector<std::thread> workers;
+    std::mutex m;
+
+    auto func = [&](){
+        bool flag = true;
+        while(flag){
+            m.lock();
+            if (indexes.empty()){
+                flag = false;
+                m.unlock();
+                continue;
+            }
+            auto index = indexes.front();
+            indexes.pop();
+            m.unlock();
+            for (size_t j = 0; j < factor.cols(); j++){
+                for(size_t k = 0; k < cols_; k++)
+                    output[index][j] += matrix[index][k] * factor[k][j];
+            }
+        }
+    };
+
+    for (size_t i = 0; i < rows_; i++)
+        indexes.push(i);
+
+    for (size_t i = 0; i < workers_amount; i++)
+        workers.push_back(std::thread(func));
+
+    for (auto& worker: workers)
+        worker.join();
+    
+    return output;
+}

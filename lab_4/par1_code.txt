@@ -1,0 +1,28 @@
+template <typename T>
+Matrix<T> Matrix<T>::multByRows(const Matrix<T> &factor, size_t workers_amount) {
+    Matrix<T> output(rows_, factor.cols());
+
+    std::vector<std::thread> workers;
+
+    auto func = [&](size_t start, size_t end){
+        for (size_t i = start; i < end; i++){
+            for (size_t j = 0; j < factor.cols(); j++){
+                for(size_t k = 0; k < cols_; k++)
+                    output[i][j] += matrix[i][k] * factor[k][j];
+            }
+        }
+    };
+
+    size_t workers_in_process = 0;
+    auto step = static_cast<size_t>(ceil(static_cast<double>(rows_) / workers_amount));
+    for (size_t i = 0, start = 0, end = step; i < workers_amount; i++, start += step, end+=step, workers_in_process++){
+        if (end >= rows_){
+            end = rows_;
+            i = workers_amount;
+        }
+        workers.push_back(std::thread(func, start, end ));
+    }
+    for (auto& worker: workers)
+        worker.join();
+    return output;
+}

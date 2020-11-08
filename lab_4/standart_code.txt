@@ -1,0 +1,12 @@
+template <typename T>
+Matrix<T> Matrix<T>::multFirst(const Matrix<T>& factor) {
+    Matrix<T> output(rows_, factor.cols());
+    for (size_t i = 0; i < rows_; i++){
+        for (size_t j = 0; j < factor.cols(); j++) {
+            for (size_t k = 0; k < cols_; k++)
+                output.matrix[i][j] += matrix[i][k] * factor[k][j];
+        }
+    }
+
+    return output;
+}

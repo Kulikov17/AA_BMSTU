@@ -1,0 +1,2 @@
+C:\AnalAnalyse\lab_2\AnalAnalyseLab2\Debug\AnalAnalyseLab2.exe
+C:\AnalAnalyse\lab_2\AnalAnalyseLab2\Debug\AnalAnalyseLab2.pdb

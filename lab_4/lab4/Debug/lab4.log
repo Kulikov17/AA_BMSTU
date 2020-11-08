@@ -1,0 +1,20 @@
+﻿  lab4.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\type_traits(1607,98): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\thread(39): message : выполняется компиляция ссылки на экземпляр шаблон функции "void std::invoke<void(__cdecl *)(std::vector<int,std::allocator<int>> &,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>,int,int),std::reference_wrapper<std::vector<int,std::allocator<int>>>,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>,double,double>(_Callable &&,_Ty1 &&,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>> &&,double &&,double &&) noexcept(false)"
+          with
+          [
+              _Callable=void (__cdecl *)(std::vector<int,std::allocator<int>> &,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>,int,int),
+              _Ty1=std::reference_wrapper<std::vector<int,std::allocator<int>>>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\thread(49): message : выполняется компиляция ссылки на экземпляр шаблон функции "unsigned int std::thread::_Invoke<_Tuple,0,1,2,3,4>(void *) noexcept"
+          with
+          [
+              _Tuple=_Tuple
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\thread(55): message : выполняется компиляция ссылки на экземпляр шаблон функции "unsigned int (__stdcall *std::thread::_Get_invoke<_Tuple,0,1,2,3,4>(std::integer_sequence<size_t,0,1,2,3,4>) noexcept)(void *)"
+C:\AnalAnalyse\lab_4\lab4\lab4.cpp(144): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::thread::thread<void(__cdecl &)(std::vector<int,std::allocator<int>> &,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>,int,int),std::reference_wrapper<std::vector<int,std::allocator<int>>>,const std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>&,double,double,0>(_Fn,std::reference_wrapper<std::vector<int,std::allocator<int>>> &&,const std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>> &,double &&,double &&)"
+          with
+          [
+              _Fn=void (__cdecl &)(std::vector<int,std::allocator<int>> &,std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>,int,int)
+          ]
+  lab4.vcxproj -> C:\AnalAnalyse\lab_4\lab4\Debug\lab4.exe
